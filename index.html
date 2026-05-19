@@ -1,0 +1,356 @@
+1<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keshav Patel Rajpoot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+radial-gradient(circle at top right,#ff000055,transparent 30%),
+radial-gradient(circle at bottom left,#ffffff11,transparent 25%);
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.badge{
+display:inline-block;
+padding:12px 24px;
+border:1px solid #ff000055;
+background:#ff000011;
+border-radius:50px;
+color:#ff4d4d;
+margin-bottom:30px;
+font-size:14px;
+backdrop-filter:blur(10px);
+}
+
+h1{
+font-size:70px;
+font-weight:900;
+line-height:1;
+margin-bottom:25px;
+}
+
+.gradient{
+background:linear-gradient(to right,#ff0000,#ffffff,#ff4444);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:20px;
+color:#b3b3b3;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 40px;
+border-radius:18px;
+font-weight:700;
+text-decoration:none;
+transition:.3s;
+cursor:pointer;
+border:none;
+display:inline-block;
+}
+
+.btn-red{
+background:linear-gradient(to right,#ff0000,#ff3d3d);
+color:white;
+box-shadow:0 0 30px #ff000066;
+}
+
+.btn-red:hover{
+transform:scale(1.05);
+}
+
+.btn-dark{
+border:1px solid #ffffff22;
+color:white;
+}
+
+.btn-dark:hover{
+border-color:#ff0000;
+background:#ff000011;
+}
+
+/* SERVICES */
+
+.section{
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:50px;
+font-weight:900;
+margin-bottom:60px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+border:1px solid #222;
+padding:40px;
+border-radius:30px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#ff0000;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.card p{
+color:#999;
+line-height:1.7;
+}
+
+/* POPUP */
+
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.7);
+display:none;
+z-index:1000;
+}
+
+.overlay.active{
+display:block;
+}
+
+.popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+background:#111;
+padding:40px;
+border-radius:30px;
+border:1px solid #333;
+width:90%;
+max-width:450px;
+text-align:center;
+z-index:2000;
+transition:.3s;
+}
+
+.popup.active{
+transform:translate(-50%,-50%) scale(1);
+}
+
+.popup h2{
+font-size:35px;
+margin-bottom:20px;
+}
+
+.popup p{
+color:#aaa;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+padding:40px;
+border-top:1px solid #222;
+color:#777;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.section-title{
+font-size:38px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+Premium Creative Portfolio
+</div>
+
+<h1>
+KESHAV <br>
+<span class="gradient">
+PATEL RAJPOOT
+</span>
+</h1>
+
+<p>
+Elite Thumbnail Designer • Video Editor • Social Media Strategist • Digital Brand Expert Creating Premium Content For Modern Creators & Businesses.
+</p>
+
+<div class="buttons">
+
+<button class="btn btn-red" onclick="openPopup()">
+Hire Me
+</button>
+
+<a href="#" class="btn btn-dark">
+Explore Portfolio
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="section">
+
+<h2 class="section-title">
+Premium Services
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Thumbnail Design</h3>
+<p>High CTR YouTube thumbnails designed for maximum clicks and engagement.</p>
+</div>
+
+<div class="card">
+<h3>Video Editing</h3>
+<p>Luxury cinematic editing for reels, shorts, YouTube & ads.</p>
+</div>
+
+<div class="card">
+<h3>Social Media Management</h3>
+<p>Complete management for Instagram, YouTube & digital brands.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- POPUP -->
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="popup">
+
+<h2>
+Hire Keshav
+</h2>
+
+<p>
+Contact directly on email for thumbnails, video editing and branding work.
+</p>
+
+<a href="mailto:official.keshavrajpoot@gmail.com" class="btn btn-red">
+Send Email
+</a>
+
+<br><br>
+
+<button onclick="closePopup()" class="btn btn-dark">
+Close
+</button>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<h2>Keshav Patel Rajpoot</h2>
+<p>Premium Digital Portfolio © 2026</p>
+
+</footer>
+
+<script>
+
+function openPopup(){
+
+document.getElementById('popup').classList.add('active');
+document.getElementById('overlay').classList.add('active');
+
+}
+
+function closePopup(){
+
+document.getElementById('popup').classList.remove('active');
+document.getElementById('overlay').classList.remove('active');
+
+}
+
+document.getElementById('overlay').addEventListener('click',closePopup);
+
+</script>
+
+</body>
+</html>
